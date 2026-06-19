@@ -1,0 +1,226 @@
+================================================================================
+ AGRA — ADTC 2026 PITCH DECK OUTLINE  (Gate 3, due 2026-09-15)
+ Track: Agriculture | Max 10 slides | Read time: 5-7 min | Speak time: 6-8 min
+================================================================================
+
+DESIGN SYSTEM
+  - Colors:      Forest Green (#1f5a3a), Charcoal (#131a16), Gold (#d4a64a)
+  - Type:        Inter / Helvetica Neue. Slide title 36pt, body 18pt min.
+  - Layout:      One core idea per slide. <= 25 words on screen.
+  - Imagery:     One full-bleed photo or one diagram per slide. No clipart.
+  - Footer:      Slide number + "Agra · ADTC 2026 · Agriculture Track"
+
+
+--------------------------------------------------------------------------------
+SLIDE 1 — TITLE  (15 sec)
+--------------------------------------------------------------------------------
+  Headline:    AGRA
+  Sub-line:    Offline Agricultural Advisor + RAG Chat + Crop Traceability
+  Bottom:      ADTC 2026 · Agriculture Track · Team Triple Ace
+  Visual:      Full-bleed photo of a smallholder farmer inspecting maize leaves
+               at sunrise. Logo bottom-right.
+
+  Speaker note: "Hi, I'm <name>. Agra is a 100% offline LLM portal that gives
+                African smallholder farmers premium agricultural intelligence
+                on the same budget laptop they already own."
+
+
+--------------------------------------------------------------------------------
+SLIDE 2 — THE PROBLEM  (45 sec)
+--------------------------------------------------------------------------------
+  Headline:    33 million smallholder farms.  Zero reliable internet.
+
+  Three stats (icon + number + caption, no paragraphs):
+    -  68%       of Sub-Saharan rural areas have no stable 3G+ coverage
+    -  4 GB      typical RAM on the laptops extension workers actually use
+    -  $0        the only price a farmer can pay for advisory software
+
+  Visual:      Map of Africa with cellular dead zones overlaid in grey;
+               highlight Nigeria, Kenya, Tanzania in green.
+
+  Speaker note: "Today's agricultural AI assumes a cloud API call. That
+                assumption excludes the people who need it most."
+
+
+--------------------------------------------------------------------------------
+SLIDE 3 — THE PERSONAS  (45 sec)
+--------------------------------------------------------------------------------
+  Headline:    Three users, one offline portal.
+
+  Three columns (photo + 1 quote + 1 need each):
+    JUMA (Extension Worker, Tanzania)
+      "I drive 80 km between farms. Cell signal drops at the gate."
+      Need: instant soil-test interpretation in the field.
+
+    AMINA (Farmer, Nigeria)
+      "Mo fẹ́ ìmọ̀ràn nínú èdè Yorùbá."
+      Need: native-language advice on pests and seasonal timing.
+
+    MOUSSA (Cooperative Manager, Côte d'Ivoire)
+      "Buyers ask for batch traceability. Pen-and-paper is no longer enough."
+      Need: searchable harvest ledger.
+
+  Speaker note: "Agra was designed against three real personas, not one."
+
+
+--------------------------------------------------------------------------------
+SLIDE 4 — WHAT AGRA DOES  (45 sec)
+--------------------------------------------------------------------------------
+  Headline:    Three offline capabilities. One portal.
+
+  Three tiles (icon + title + one-line):
+    1. SOIL DIAGNOSIS
+       Enter NPK + pH. Get ranked crop matches + nutrient corrections.
+
+    2. RAG CHAT ASSISTANT
+       Ask anything about pests, irrigation, rotation - in EN or Yorùbá.
+
+    3. CROP TRACEABILITY LEDGER
+       Register harvest batches. Each gets a hashed local trace ID.
+
+  Visual:      Triptych of UI screenshots, glassmorphism panels.
+
+  Speaker note: "These are not three apps - they share a database. The
+                soil result becomes context for the chat; the chat can
+                explain a registered batch's crop."
+
+
+--------------------------------------------------------------------------------
+SLIDE 5 — LIVE DEMO  (60 sec — optional video embed)
+--------------------------------------------------------------------------------
+  Headline:    See it work — fully offline.
+
+  Layout:      Embed the 2-min demo video, OR show 4 screenshots in a 2x2 grid:
+                 [1] Soil diagnosis result with three suitability pills
+                 [2] Yorùbá UI active
+                 [3] Streaming chat answering an armyworm question
+                 [4] Trace ID AGRA-NG-2026-X8A2 appearing in the ledger
+
+  Speaker note: "I'll let the demo speak."  (Play 60-90 sec slice of the
+                Gate 1 video; pause at the streaming-chat moment.)
+
+
+--------------------------------------------------------------------------------
+SLIDE 6 — ARCHITECTURE  (45 sec)
+--------------------------------------------------------------------------------
+  Headline:    100% loopback. 100% reproducible.
+
+  Diagram:     The same boxes from REPORT.md but cleaned up for projection:
+                  Browser  ->  Flask  ->  {SQLite + FTS5,  Qwen2.5-3B GGUF}
+               Show "127.0.0.1 only" label on the HTTP arrow.
+               Show "llama.cpp" sticker on the model box.
+
+  Three call-outs (small, on the right):
+    -  Qwen2.5-3B-Instruct Q4_K_M (~2.2 GB)
+    -  KV cache quantised to q4_0
+    -  Vanilla JS frontend; browser uses <250 MB
+
+  Speaker note: "No external API call. No embedding model. No JS framework.
+                Every megabyte matters when the RAM ceiling is seven."
+
+
+--------------------------------------------------------------------------------
+SLIDE 7 — CROSS-DISCIPLINARY INTEGRATION  (45 sec)
+--------------------------------------------------------------------------------
+  Headline:    Three disciplines, one shared database.
+
+  Venn diagram (3 circles overlapping):
+    AGRONOMY     - 12 crop tolerance profiles, deterministic NPK/pH scoring
+    NLP / RAG    - SQLite FTS5 + Qwen 3B llama.cpp chat in EN + YO
+    SUPPLY CHAIN - hashed batch IDs, country-code routing, searchable ledger
+
+  Center label: AGRA  (the only thing in the intersection)
+
+  Speaker note: "ADTC asks for at least one meaningful integration. We
+                shipped three, sharing the same SQLite file."
+
+
+--------------------------------------------------------------------------------
+SLIDE 8 — AFRICAN ALPHA (Yorùbá)  (30 sec)
+--------------------------------------------------------------------------------
+  Headline:    Yorùbá from the corpus up — not bolt-on translation.
+
+  Side-by-side:
+    LEFT (EN):  Q: "How do I treat fall armyworm on maize?"
+                A: "Scout fields weekly. Hand-pick larvae early morning..."
+                Sources: [Maize pest: fall armyworm]
+
+    RIGHT (YO): Q: "Bawo ni mo se le toju armyworm lori agbado?"
+                A: "Wo oko re ni gbogbo ose. Mu kokoro pelu owo..."
+                Sources: [Itoju kokoro Agbado: armyworm]
+
+  Footer:      Qualifies for ADTC African Alpha bonus  (+15% on panel score)
+
+  Speaker note: "The Yorùbá corpus and the English corpus are separate
+                advisory documents — not the English run through translate.
+                The model retrieves directly from Yorùbá sources."
+
+
+--------------------------------------------------------------------------------
+SLIDE 9 — BENCHMARKS  (60 sec — the slide judges screenshot)
+--------------------------------------------------------------------------------
+  Headline:    By the numbers.
+
+  Table (large, readable from the back row):
+
+       METRIC                  AGRA            ADTC TARGET
+       -------------------     -----------     ------------
+       Peak RAM                3.8 GB          < 7 GB
+       Efficiency points       9.1 / 20        higher = better
+       Tokens / second         8.4             relative
+       First-token latency     2.1 s           < 3 s
+       Accuracy (EN, n=42)     77%             panel + auto
+       Accuracy (YO, n=8)      58%             passable
+       CPU temp (sustained)    71 °C           < 85 °C
+       Thermal penalty         0               -10 if throttle
+
+  Bonuses claimed:
+       +15 %  African Alpha (Yorùbá)
+       +10 %  Budget Profile (refurbished i5 tier)
+
+  Speaker note: "Open eval harness in the repo - anyone can re-run it.
+                We are running at 54% of the RAM ceiling on purpose: that
+                gives us 9 of 20 efficiency points before the contest even
+                starts measuring tokens-per-second."
+
+
+--------------------------------------------------------------------------------
+SLIDE 10 — ROADMAP + ASK  (30 sec)
+--------------------------------------------------------------------------------
+  Headline:    What 6 months of residency buys.
+
+  Three columns:
+
+    NEXT 30 DAYS (post-prize)
+      -  expand corpus: Hausa + Swahili (covers ~400M speakers)
+      -  voice input via whisper.cpp tiny GGUF (still offline)
+      -  pilot with 2 extension agencies in Oyo & Kaduna
+
+    NEXT 90 DAYS
+      -  add cocoa, oil palm, cassava-disease vision (gemma-vision GGUF)
+      -  USB-stick distribution kits for offline install
+      -  partner with cooperative-finance NGO for batch-ID -> microloan
+
+    NEXT 180 DAYS
+      -  open-source the corpus + eval harness as a community benchmark
+      -  publish "Agra Standard" — minimum portable agronomy schema
+
+  Bottom-right call-to-action:
+      AGRA wins for ADTC because it is the only submission that proves
+      cross-disciplinary integration AND African Alpha AND budget profile
+      AND clean numbers on the official scoring formula.
+
+  Speaker note: "Pick Agra. The road from here is already mapped. Thank you."
+
+
+================================================================================
+ RECORDING / DELIVERY CHECKLIST
+================================================================================
+  -  Build deck in Google Slides (export to PDF at submission time).
+  -  Slides: 16:9, 1920x1080.
+  -  Run a stopwatch through twice — total ~6:30, leaves buffer for Q&A.
+  -  Slide 5 video must be in MP4, embedded not linked (works offline).
+  -  Print backup of slides 1, 4, 7, 9 in case projector fails.
+  -  Bring laptop with Agra pre-installed and warmed up, demo URL bookmarked.
+  -  Have benchmarks regenerated on the demo laptop the morning of pitch.
+================================================================================

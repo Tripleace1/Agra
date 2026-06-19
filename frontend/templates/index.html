@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agra — Offline Agricultural Advisor</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar glass">
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>
+          <h1>Agra</h1>
+          <small data-i18n="tagline">Offline Agricultural Advisor</small>
+        </div>
+      </div>
+      <nav>
+        <button class="nav-btn active" data-view="dashboard" data-i18n="nav.dashboard">Dashboard</button>
+        <button class="nav-btn" data-view="chat" data-i18n="nav.chat">Chat Assistant</button>
+        <button class="nav-btn" data-view="ledger" data-i18n="nav.ledger">Traceability</button>
+      </nav>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="yo">YO</button>
+      </div>
+      <div class="status">
+        <div class="status-row"><span data-i18n="status.model">Model</span><span id="model-status" class="badge">…</span></div>
+        <div class="status-row"><span data-i18n="status.network">Network</span><span class="badge ok" data-i18n="status.offline">Offline</span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <!-- DASHBOARD / SOIL -->
+      <section id="view-dashboard" class="view active">
+        <header class="view-head">
+          <h2 data-i18n="soil.title">Soil Diagnosis</h2>
+          <p data-i18n="soil.sub">Enter your soil test values to find the best crops.</p>
+        </header>
+
+        <div class="grid two">
+          <div class="card glass">
+            <h3 data-i18n="soil.form.title">Soil Test Input</h3>
+            <form id="soil-form">
+              <label data-i18n="soil.form.soil_type">Soil Type
+                <select name="soil_type">
+                  <option value="loamy">Loamy</option>
+                  <option value="sandy">Sandy</option>
+                  <option value="clay">Clay</option>
+                  <option value="silt">Silt</option>
+                </select>
+              </label>
+              <label data-i18n="soil.form.ph">pH (0–14)
+                <input type="number" step="0.1" min="0" max="14" name="ph" value="6.5" required />
+              </label>
+              <label data-i18n="soil.form.n">Nitrogen N (mg/kg)
+                <input type="number" step="1" min="0" name="n" value="30" required />
+              </label>
+              <label data-i18n="soil.form.p">Phosphorus P (mg/kg)
+                <input type="number" step="1" min="0" name="p" value="25" required />
+              </label>
+              <label data-i18n="soil.form.k">Potassium K (mg/kg)
+                <input type="number" step="1" min="0" name="k" value="100" required />
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="summarize" id="summarize" checked />
+                <span data-i18n="soil.form.summarize">Generate AI summary</span>
+              </label>
+              <button type="submit" class="btn primary" data-i18n="soil.form.submit">Diagnose</button>
+            </form>
+          </div>
+
+          <div class="card glass">
+            <h3 data-i18n="soil.results.title">Recommendations</h3>
+            <div id="soil-results">
+              <p class="muted" data-i18n="soil.results.empty">Submit the form to see crop matches.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAT -->
+      <section id="view-chat" class="view">
+        <header class="view-head">
+          <h2 data-i18n="chat.title">Chat Assistant</h2>
+          <p data-i18n="chat.sub">Ask questions on pest control, irrigation, rotation — fully offline.</p>
+        </header>
+        <div class="card glass chat-card">
+          <div id="chat-log" class="chat-log"></div>
+          <form id="chat-form" class="chat-input">
+            <input id="chat-prompt" type="text" autocomplete="off"
+                   placeholder="Ask about your farm…" data-i18n-attr="placeholder|chat.placeholder" />
+            <button class="btn primary" type="submit" data-i18n="chat.send">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- LEDGER -->
+      <section id="view-ledger" class="view">
+        <header class="view-head">
+          <h2 data-i18n="ledger.title">Crop Traceability Ledger</h2>
+          <p data-i18n="ledger.sub">Register harvest batches; each gets a unique trace ID.</p>
+        </header>
+
+        <div class="grid two">
+          <div class="card glass">
+            <h3 data-i18n="ledger.form.title">Register Harvest Batch</h3>
+            <form id="trace-form">
+              <label data-i18n="ledger.form.farmer">Farmer name
+                <input name="farmer_name" required />
+              </label>
+              <label data-i18n="ledger.form.location">Location
+                <input name="location" required placeholder="e.g. Ibadan, Nigeria" />
+              </label>
+              <label data-i18n="ledger.form.crop">Crop type
+                <input name="crop_type" required />
+              </label>
+              <label data-i18n="ledger.form.date">Harvest date
+                <input type="date" name="harvest_date" required />
+              </label>
+              <label data-i18n="ledger.form.weight">Weight (kg)
+                <input type="number" step="0.1" name="weight_kg" required />
+              </label>
+              <label data-i18n="ledger.form.grade">Quality grade
+                <select name="quality_grade">
+                  <option value="A">A — Premium</option>
+                  <option value="B">B — Standard</option>
+                  <option value="C">C — Basic</option>
+                </select>
+              </label>
+              <label data-i18n="ledger.form.notes">Notes
+                <textarea name="notes" rows="2"></textarea>
+              </label>
+              <button class="btn primary" type="submit" data-i18n="ledger.form.submit">Register Batch</button>
+            </form>
+            <div id="trace-result"></div>
+          </div>
+
+          <div class="card glass">
+            <h3 data-i18n="ledger.list.title">Registered Batches</h3>
+            <div class="search-row">
+              <input id="trace-search" type="text" data-i18n-attr="placeholder|ledger.list.search" placeholder="Search by ID, farmer, crop…" />
+              <button class="btn" id="trace-search-btn" data-i18n="ledger.list.go">Search</button>
+            </div>
+            <div id="trace-list"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

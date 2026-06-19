@@ -1,0 +1,622 @@
+{
+  "summary": {
+    "model": "(default)",
+    "items": 50,
+    "overall_accuracy": 0.65,
+    "tokens_per_second": 2.8,
+    "peak_rss_mb": 0.0,
+    "peak_cpu_temp_c": 100.0,
+    "by_category": {
+      "soil": 0.7,
+      "pest": 0.562,
+      "irrigation": 0.833,
+      "rotation": 0.25,
+      "season": 0.8,
+      "crop": 0.8,
+      "traceability": 0.25,
+      "reasoning": 0.25,
+      "edge": 0.917
+    },
+    "by_language": {
+      "en": 0.75,
+      "yo": 0.125
+    }
+  },
+  "results": [
+    {
+      "id": "soil-01",
+      "lang": "en",
+      "category": "soil",
+      "prompt": "My maize has yellowing older leaves and stunted growth. What nutrient is likely deficient and how do I fix it?",
+      "answer": "Based on the symptoms you described, your maize plant is likely experiencing nitrogen deficiency. To fix this, you can apply well-rotted compost, which is rich in organic matter and slowly releases nitrogen. Additionally, you can plant nitrogen-fixing cover crops like cowpea or mucuna, which help replenish the soil with nitrogen. If you need a quicker fix, use urea sparingly at 50-100 kg/ha, split-applied over the growing season. Ensure the urea is applied carefully to avoid burning the plants.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 62.23,
+      "tokens_est": 101
+    },
+    {
+      "id": "soil-02",
+      "lang": "en",
+      "category": "soil",
+      "prompt": "My soil pH is 4.8. Is this good for tomatoes and what should I do?",
+      "answer": "Your soil pH of 4.8 is quite acidic, which is not ideal for growing tomatoes. Tomato plants prefer a slightly acidic to neutral soil pH of 6.0 to 6.8. An acidic soil pH of 4.8 can lead to nutrient deficiencies and other growth issues for tomatoes.\n\nTo correct this, you can apply agricultural lime to raise the pH gradually. For a soil pH of 4.8, you would need to apply 1-3 tons of agricultural lime per hectare. This will help to bring your soil pH closer to a more suitable range for tomato growth.\n\nRemember to test the pH again after application to ensure it has reached the desired range, and adjust as necessary. Always follow recommended rates and safety guidelines when applying lime or other soil amendments.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 59.6,
+      "tokens_est": 166
+    },
+    {
+      "id": "soil-03",
+      "lang": "en",
+      "category": "soil",
+      "prompt": "What is the recommended pH range for cassava?",
+      "answer": "For cassava, the recommended soil pH range is between 5.5 and 6.5. This range helps ensure optimal growth and nutrient uptake for the crop.",
+      "score": 0.0,
+      "notes": [
+        "missed '4.5'",
+        "missed '7'"
+      ],
+      "latency_s": 25.19,
+      "tokens_est": 31
+    },
+    {
+      "id": "soil-04",
+      "lang": "en",
+      "category": "soil",
+      "prompt": "How can I increase phosphorus in my soil organically?",
+      "answer": "To increase phosphorus in your soil organically, you can apply rock phosphate or bone meal before planting. These materials are rich in phosphorus and can be worked into the top 15 cm of soil. Additionally, using compost can help maintain soil health and gradually increase phosphorus levels over time. Regularly incorporating these organic sources will help replenish phosphorus levels, especially in soils that have been depleted of this nutrient.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 31.6,
+      "tokens_est": 89
+    },
+    {
+      "id": "soil-05",
+      "lang": "en",
+      "category": "soil",
+      "prompt": "Purple-tinted leaves on young plants — what nutrient deficiency?",
+      "answer": "Purple-tinted leaves on young plants indicate phosphorus deficiency. To address this, apply rock phosphate or bone meal before planting and incorporate them into the top 15 cm of soil. This will help improve root development and overall plant health.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 24.24,
+      "tokens_est": 50
+    },
+    {
+      "id": "soil-06",
+      "lang": "en",
+      "category": "soil",
+      "prompt": "How do I prepare yam mounds correctly?",
+      "answer": "To prepare yam mounds correctly:\n\n1. **Soil Preparation**: Build mounds 60-90 cm tall using topsoil. This helps to elevate the yam plants above waterlogged areas and improves drainage.\n\n2. **Compost Addition**: Add compost to the core of the mound. This improves soil fertility and provides essential nutrients for the yam plants.\n\n3. **Planting**: After the first reliable rain, plant one seed yam per mound. This ensures proper spacing and optimal growth conditions for each plant.\n\nFollow these steps to prepare your yam mounds effectively.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 32.24,
+      "tokens_est": 109
+    },
+    {
+      "id": "soil-07",
+      "lang": "en",
+      "category": "soil",
+      "prompt": "What is the C:N ratio rule for compost layers?",
+      "answer": "The composting rule of thumb is to layer green (kitchen scraps, fresh leaves) and brown (dry leaves, straw) material at a 1:3 ratio. This means for every part of green material, add three parts of brown material. Turning the pile every 2 weeks helps maintain the proper balance and speed up the composting process.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 30.54,
+      "tokens_est": 70
+    },
+    {
+      "id": "soil-08",
+      "lang": "en",
+      "category": "soil",
+      "prompt": "Leaf edges are scorching and stems weak — likely deficiency?",
+      "answer": "Based on the symptoms you've described—leaf-edge scorching and weak stems—it sounds like your plants may be experiencing potassium deficiency. To address this, you can apply wood ash sparingly or use muriate of potash at a rate of 50-80 kg per hectare. Remember to apply these amendments cautiously, as wood ash can increase soil pH, which might not be ideal for all crops.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 29.99,
+      "tokens_est": 80
+    },
+    {
+      "id": "pest-01",
+      "lang": "en",
+      "category": "pest",
+      "prompt": "Fall armyworm is attacking my maize. What organic control should I use first?",
+      "answer": "For fall armyworm, you should first use neem extract. Apply 50 g of neem extract per liter of water at the first sign of larvae. This natural pesticide can help control the pest without harming your crops. Remember to scout fields weekly and hand-pick larvae early in the morning. Continue monitoring and apply neem extract as needed.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 28.42,
+      "tokens_est": 74
+    },
+    {
+      "id": "pest-02",
+      "lang": "en",
+      "category": "pest",
+      "prompt": "How do I prevent cassava mosaic disease in a new planting?",
+      "answer": "To prevent cassava mosaic disease in a new planting, start by using certified clean cuttings. This ensures the plants are disease-free. Also, remove and destroy any infected plants immediately to prevent the spread of the disease. To control whitefly vectors, which transmit the disease, use neem oil or sticky yellow traps. Regular monitoring and prompt action are key to managing this disease effectively.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 30.96,
+      "tokens_est": 81
+    },
+    {
+      "id": "pest-03",
+      "lang": "en",
+      "category": "pest",
+      "prompt": "Late blight is starting on my tomatoes. What steps reduce spread?",
+      "answer": "To reduce the spread of late blight on your tomatoes, follow these steps:\n\n1. Stake your plants to improve airflow and reduce humidity around the foliage.\n2. Prune lower leaves to expose the plant to less moisture and prevent disease spread.\n3. Water plants at the base to avoid wetting the leaves, which can promote disease growth.\n4. Apply a copper-based fungicide weekly once the outbreak begins. This helps prevent the disease from spreading and protects healthy parts of the plant.\n\nRegular monitoring and early intervention are key to controlling late blight.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 43.31,
+      "tokens_est": 119
+    },
+    {
+      "id": "pest-04",
+      "lang": "en",
+      "category": "pest",
+      "prompt": "How often should I scout maize fields for armyworm?",
+      "answer": "You should scout maize fields weekly for fall armyworm. This frequent monitoring allows you to catch the pest early and take action promptly, reducing the risk of significant damage.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 22.17,
+      "tokens_est": 37
+    },
+    {
+      "id": "pest-05",
+      "lang": "en",
+      "category": "pest",
+      "prompt": "What insect vector spreads cassava mosaic?",
+      "answer": "Cassava mosaic disease is spread by whiteflies. To control this vector, use neem or sticky yellow traps.",
+      "score": 0.0,
+      "notes": [
+        "missed 'whitefly'"
+      ],
+      "latency_s": 16.28,
+      "tokens_est": 22
+    },
+    {
+      "id": "pest-06",
+      "lang": "en",
+      "category": "pest",
+      "prompt": "Is mono-cropping maize a good or bad idea for pest control?",
+      "answer": "Mono-cropping maize is not a good idea for pest control. It increases the risk of pest infestations because all the crops in the field are the same, making them easier targets for pests. In the context provided, it is recommended to avoid mono-cropping and rotate with legumes to break pest cycles and maintain soil health.",
+      "score": 0.5,
+      "notes": [
+        "missed 'bad'"
+      ],
+      "latency_s": 29.93,
+      "tokens_est": 71
+    },
+    {
+      "id": "irrig-01",
+      "lang": "en",
+      "category": "irrigation",
+      "prompt": "How much water does drip irrigation save versus flood?",
+      "answer": "Drip irrigation can save between 30-60% water compared to flood irrigation. This is achieved by delivering water directly to the plant roots, reducing evaporation and runoff.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 26.19,
+      "tokens_est": 33
+    },
+    {
+      "id": "irrig-02",
+      "lang": "en",
+      "category": "irrigation",
+      "prompt": "When in the day should I run drip irrigation?",
+      "answer": "To maximize water efficiency and minimize evaporation, it's best to run drip irrigation systems early in the morning. This timing helps reduce water loss to the hot sun and ensures that the water reaches the plants' roots effectively.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 20.46,
+      "tokens_est": 49
+    },
+    {
+      "id": "irrig-03",
+      "lang": "en",
+      "category": "irrigation",
+      "prompt": "How thick should mulch be around vegetable plants?",
+      "answer": "The mulch should be around 5 cm thick around vegetable plants. This thickness helps in reducing evaporation and suppressing weeds effectively. Keep it 5 cm away from the plant stems to prevent rot.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 20.37,
+      "tokens_est": 42
+    },
+    {
+      "id": "irrig-04",
+      "lang": "en",
+      "category": "irrigation",
+      "prompt": "Why keep mulch a few cm away from plant stems?",
+      "answer": "Keeping mulch a few cm away from plant stems helps prevent rot. Mulch, especially when moist, can create a warm, humid environment that encourages fungal growth, leading to stem rot. By keeping mulch away from plant stems, you reduce the risk of fungal infections and protect your plants.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 23.75,
+      "tokens_est": 62
+    },
+    {
+      "id": "irrig-05",
+      "lang": "en",
+      "category": "irrigation",
+      "prompt": "How can I detect a clogged drip line?",
+      "answer": "To detect a clogged drip line, look for these signs:\n\n1. **Reduced Water Flow**: Check if water is not flowing as much through the drip lines as it should.\n2. **Leaves Showing Signs of Stress**: If leaves are wilting or turning yellow, it could indicate a clogged line, as the plants aren't receiving adequate water.\n3. **Water Spilling Outside the Line**: Sometimes, water can spill outside the drip line if it can't flow through properly.\n4. **Noisy Drip Lines**: Listen for unusual noises, like hissing or gurgling, which might indicate a blockage.\n\nOnce you notice these signs, flushing the lines is the next step to clear the clogs. Use a pressure washer or a hose with a high-pressure nozzle to gently clean the lines.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 40.61,
+      "tokens_est": 161
+    },
+    {
+      "id": "rotation-01",
+      "lang": "en",
+      "category": "rotation",
+      "prompt": "After a maize harvest, what crop helps restore nitrogen?",
+      "answer": "After harvesting maize, planting leguminous crops like cowpea or groundnut helps restore nitrogen to the soil. These crops are known for their ability to fix nitrogen from the air, which improves soil health for subsequent crops.",
+      "score": 0.0,
+      "notes": [
+        "missed 'legume'"
+      ],
+      "latency_s": 26.82,
+      "tokens_est": 46
+    },
+    {
+      "id": "rotation-02",
+      "lang": "en",
+      "category": "rotation",
+      "prompt": "Why avoid planting tomato right after pepper?",
+      "answer": "Avoiding planting tomatoes right after peppers (or any heavy feeders) helps prevent soil nutrient depletion. Peppers are heavy feeders, using up a lot of nutrients from the soil. Planting tomatoes immediately afterward can lead to a soil nutrient deficit, making tomatoes less productive and more susceptible to diseases. Rotating crops like this ensures that the soil has time to replenish nutrients, which is important for maintaining soil health and crop productivity.",
+      "score": 0.0,
+      "notes": [
+        "missed 'family'"
+      ],
+      "latency_s": 30.12,
+      "tokens_est": 92
+    },
+    {
+      "id": "rotation-03",
+      "lang": "en",
+      "category": "rotation",
+      "prompt": "Name a nitrogen-fixing crop suitable for West Africa.",
+      "answer": "A nitrogen-fixing crop suitable for West Africa, including Nigeria, is cowpea (Vigna unguiculata). It is a legume that can be effectively used in crop rotation to help replenish soil nitrogen levels.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 28.8,
+      "tokens_est": 40
+    },
+    {
+      "id": "season-01",
+      "lang": "en",
+      "category": "season",
+      "prompt": "When is the early rainy season in southern Nigeria for planting maize?",
+      "answer": "In southern Nigeria, the early rainy season for planting maize and cassava typically starts in April and continues through July. This is the ideal time to plant these crops as the early rains provide the necessary moisture for good germination and growth.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 22.55,
+      "tokens_est": 54
+    },
+    {
+      "id": "season-02",
+      "lang": "en",
+      "category": "season",
+      "prompt": "How long is the typical maize cycle from planting to harvest?",
+      "answer": "The typical maize cycle from planting to harvest is about 90-120 days, depending on the variety and local climate conditions. This timeline includes the germination period, growth stages, and the time required for the maize to mature and be ready for harvest.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 23.52,
+      "tokens_est": 54
+    },
+    {
+      "id": "season-03",
+      "lang": "en",
+      "category": "season",
+      "prompt": "When should I harvest cassava?",
+      "answer": "Harvesting cassava depends on the variety and how mature you want it to be. For most varieties, you can harvest cassava roots 100 to 150 days after planting, when the roots are firm and the vines start to yellow and die back. However, for the best quality, wait until the vines have completely died and the roots have fully developed. Always check the specific variety you are growing for its recommended harvest time.",
+      "score": 0.0,
+      "notes": [
+        "missed 'month'"
+      ],
+      "latency_s": 29.8,
+      "tokens_est": 94
+    },
+    {
+      "id": "season-04",
+      "lang": "en",
+      "category": "season",
+      "prompt": "Cowpea grows in how many days?",
+      "answer": "Cowpea, like most legumes, has a variable growth period depending on the variety and growing conditions. Typically, it takes about 60-90 days from seedling to maturity. However, the exact number of days can vary. It's best to consult a local agricultural extension for more specific information tailored to your region.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 25.37,
+      "tokens_est": 65
+    },
+    {
+      "id": "crop-01",
+      "lang": "en",
+      "category": "crop",
+      "prompt": "Which crop tolerates the poorest soils: cassava, tomato or rice?",
+      "answer": "Among the crops you mentioned, rice generally tolerates poorer soils better than cassava or tomato. Rice has a higher tolerance to various soil conditions and can grow in a wide range of soil types, including those with lower fertility. Cassava and tomato, on the other hand, are more sensitive to soil nutrient levels. For smallholder farmers in Africa, improving soil fertility through practices like crop rotation, using organic matter, and applying fertilizers can help these crops grow better in less fertile soils.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 26.52,
+      "tokens_est": 106
+    },
+    {
+      "id": "crop-02",
+      "lang": "en",
+      "category": "crop",
+      "prompt": "What soil type is ideal for groundnut?",
+      "answer": "Groundnut prefers well-drained, fertile soils with a pH between 6.0 and 6.5. Sandy loams and loams are ideal as they allow good aeration and water drainage, which are crucial for groundnut growth. Avoid heavy clay soils that can become waterlogged and impede root growth.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 19.11,
+      "tokens_est": 57
+    },
+    {
+      "id": "crop-03",
+      "lang": "en",
+      "category": "crop",
+      "prompt": "Why is plantain considered perennial?",
+      "answer": "Plantain is considered perennial in some regions because it can grow back year after year without needing to be replanted. It has a strong root system that allows it to survive the dry seasons and grow again in the rainy seasons. This makes it a valuable crop for smallholder farmers in tropical and subtropical areas. However, in other regions, plantain might be grown as an annual crop, meaning it is planted, harvested, and then replanted from seeds or cuttings each year.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 19.27,
+      "tokens_est": 105
+    },
+    {
+      "id": "crop-04",
+      "lang": "en",
+      "category": "crop",
+      "prompt": "Is sorghum drought tolerant?",
+      "answer": "Yes, sorghum is indeed drought tolerant. It can grow in arid and semi-arid environments and can thrive with less water compared to other crops. This makes it a valuable crop for smallholder farmers in regions with limited water resources.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 9.87,
+      "tokens_est": 50
+    },
+    {
+      "id": "trace-01",
+      "lang": "en",
+      "category": "traceability",
+      "prompt": "Why is per-batch traceability useful for organic certification?",
+      "answer": "Per-batch traceability is useful for organic certification because it allows for the complete and accurate tracking of each batch of organic products from farm to consumer. This helps in verifying that the products meet organic standards, including the use of organic farming practices and the absence of prohibited substances. It ensures transparency and accountability, which is crucial for maintaining consumer trust and compliance with organic regulations. Traceability also aids in addressing any issues that may arise, such as contamination or mislabeling, by quickly identifying the source of the problem.",
+      "score": 0.0,
+      "notes": [
+        "missed 'origin'"
+      ],
+      "latency_s": 32.63,
+      "tokens_est": 115
+    },
+    {
+      "id": "trace-02",
+      "lang": "en",
+      "category": "traceability",
+      "prompt": "What information should every harvest batch record include at minimum?",
+      "answer": "Every harvest batch should record minimum information such as:\n\n- Date of harvest\n- Quantity harvested (weight or volume)\n- Quality assessment (appearance, size, condition)\n- Any notable pests or diseases observed\n- Weather conditions during harvest\n- Any additional notes or observations\n- Yield compared to previous harvests\n\nThis data helps in understanding harvest performance and identifying trends or issues that may affect future crops.",
+      "score": 0.5,
+      "notes": [
+        "missed 'farmer'"
+      ],
+      "latency_s": 29.68,
+      "tokens_est": 85
+    },
+    {
+      "id": "yo-01",
+      "lang": "yo",
+      "category": "soil",
+      "prompt": "Ewe agbado mi n di pupa, kini idi re ati ojutu re?",
+      "answer": "Based on the information provided, the armyworm (pest) primarily affects young plants and seedlings, causing damage to the leaves. It does not specifically target mature plants or mature leaves.\n\nSo, the armyworm would likely affect the \"pupa\" (young plants or seedlings) and \"ojutu\" (seedlings) in this context. The armyworm is known for its voracious feeding on young plants, including leaves, stems, and fruits, which could lead to stunted growth or death of the plants if not controlled.",
+      "score": 0.0,
+      "notes": [
+        "missed 'nitrogen'"
+      ],
+      "latency_s": 50.1,
+      "tokens_est": 100
+    },
+    {
+      "id": "yo-02",
+      "lang": "yo",
+      "category": "soil",
+      "prompt": "pH ile mi kere si 5.5, kini emi yio se?",
+      "answer": "Based on the information provided in context [1], if the soil pH is 5.5, it is classified as an alajaja (soil). For alajaja soil, the recommended application rate for ikan (fish meal) is 1-3 t/ha.",
+      "score": 0.0,
+      "notes": [
+        "missed 'orombo'",
+        "missed 'lime'"
+      ],
+      "latency_s": 29.47,
+      "tokens_est": 45
+    },
+    {
+      "id": "yo-03",
+      "lang": "yo",
+      "category": "pest",
+      "prompt": "Kokoro armyworm n je agbado mi. Bawo ni mo se le da a duro?",
+      "answer": "Mo nla iku da agbado n je armyworm. Armyworm ti o le da agbado ni owo ni owuro, ti o yebiye. Agbado ti o le da agbado n je armyworm ni owo ni owuro. Mo ni oye lati o le da agbado n je armyworm ni owo ni owuro.\n\nAgbado ti o le da armyworm ni owo ni owuro ni oye lati o le da agbado n je armyworm. Agbado ti o le da armyworm ni owo ni owuro, ti o le da agbado n je armyworm. Mo ni oye lati o le da agbado n je armyworm ni owo ni owuro.\n\nAgbado ti o le da armyworm ni owo ni owuro, ti o ye agbado n je armyworm. Agbado ti o le da armyworm ni owo ni owuro, ti o ye agbado n je armyworm. Mo ni oye lati o le da agbado n je armyworm ni owo ni owuro.\n\nAgbado ti o le da armyworm ni owo ni owuro, ti o ye agbado n je armyworm. Agbado ti o le da armyworm ni owo ni owuro, ti o ye agbado n je armyworm. Mo ni oye lati o le da agbado n je armyworm ni owo ni owuro.\n\nAgbado ti o le da armyworm ni owo ni owuro, ti o ye agbado n je armyworm. Agbado ti o le da armyworm ni owo ni owuro, ti o ye agbado n je armyworm. Mo ni oye lati o le da agbado n",
+      "score": 0.0,
+      "notes": [
+        "missed 'neem'"
+      ],
+      "latency_s": 87.07,
+      "tokens_est": 315
+    },
+    {
+      "id": "yo-04",
+      "lang": "yo",
+      "category": "pest",
+      "prompt": "Bawo ni a se le da arun cassava mosaic duro?",
+      "answer": "Based on the information provided, the cassava mosaic disease (pest) affects cassava plants. The context mentions that cassava mosaic disease can cause leaves to become mottled or distorted, and it can lead to reduced yield and quality of the cassava crop. However, the specific details about how to control or manage this pest are not provided in the given context. The provided information is about other pests and their control methods, not the cassava mosaic disease.",
+      "score": 0.0,
+      "notes": [
+        "missed 'whitefly'",
+        "missed 'ege'"
+      ],
+      "latency_s": 34.4,
+      "tokens_est": 98
+    },
+    {
+      "id": "yo-05",
+      "lang": "yo",
+      "category": "irrigation",
+      "prompt": "Kini anfani mulching fun oko mi?",
+      "answer": "Based on the context provided, mulching is a technique used to cover the soil surface, which helps in conserving soil moisture and reducing weed growth. It can be applied to irrigation purposes to protect the soil from evaporation and help in maintaining the moisture level of the soil, which is beneficial for plants.\n\nIn the context given, mulching is described as covering the soil surface with a thin layer of organic material (mulch), such as compost or leaves, to a depth of 5-10 centimeters. The mulch is supposed to help in keeping the soil moist and prevent weed growth, which could be useful for irrigation purposes.",
+      "score": 0.0,
+      "notes": [
+        "missed 'omi'"
+      ],
+      "latency_s": 41.81,
+      "tokens_est": 137
+    },
+    {
+      "id": "yo-06",
+      "lang": "yo",
+      "category": "rotation",
+      "prompt": "Lehin ti agbado ti pari, kini emi yio gbin ki nitrogen le pada si ile?",
+      "answer": "Based on the context provided, the crop that is typically rotated with cassava (agbado) to add nitrogen to the soil is cowpea (epa). The rotation of cassava with cowpea helps in maintaining and increasing soil fertility by adding nitrogen through the cowpea growth cycle.\n\nSo, to directly answer your question: The crop that is likely to be rotated with agbado (cassava) to add nitrogen to the soil is cowpea (epa).",
+      "score": 0.0,
+      "notes": [
+        "missed 'ewa'"
+      ],
+      "latency_s": 37.71,
+      "tokens_est": 91
+    },
+    {
+      "id": "yo-07",
+      "lang": "yo",
+      "category": "season",
+      "prompt": "Igba wo ni akoko ojo bere ni Guusu Naijiria?",
+      "answer": "Akoko ojo bere ni Guusu Naijiria fun agbado/ege (April-July) ti ojo tete April-July fun agbado/ege.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 32.49,
+      "tokens_est": 19
+    },
+    {
+      "id": "yo-08",
+      "lang": "yo",
+      "category": "crop",
+      "prompt": "Iru ile wo lo dara fun epa?",
+      "answer": "Based on the context provided, it seems you're asking about the pH level for soil in a specific context, likely for agricultural purposes. The information provided does not directly address the pH level of the soil. However, from the context, we can infer that:\n\n- For the soil pH, it is recommended that the pH of the soil should be between 5.5 and 7.5.\n- Soil with a pH of 5.5 is considered acidic, while soil with a pH of 7.5 is considered neutral.\n- Soil with a pH of 7.5 or above may require sulfur and compost to lower the pH.\n- Soil with a pH of 5.5 or below may require sulfur and compost to raise the pH.\n\nWithout a specific pH level being mentioned in the provided context, it's not possible to give a definitive answer about the pH level of the soil. If you have a specific pH level in mind or are looking for information about a particular soil's pH, please provide that information.",
+      "score": 0.0,
+      "notes": [
+        "missed 'iyanrin'",
+        "missed 'sandy'"
+      ],
+      "latency_s": 57.4,
+      "tokens_est": 219
+    },
+    {
+      "id": "reason-01",
+      "lang": "en",
+      "category": "reasoning",
+      "prompt": "I have sandy soil pH 5.2 with N 10 P 12 K 35. Recommend one crop that will still grow and one nutrient to fix first.",
+      "answer": "Given your sandy soil with a pH of 5.2, which is quite acidic, and your nutrient levels (N 10, P 12, K 35), here are recommendations:\n\n1. Crop Recommendation: For sandy soil, a crop that can tolerate acidity and low nutrient levels well is cowpea (also known as black-eyed pea). Cowpea is a legume that can fix atmospheric nitrogen, making it a good choice for sandy soils.\n\n2. Nutrient Correction: Since the soil is acidic, you should address this first. Apply agricultural lime at a rate of 1-3 tons per hectare. This will help raise the pH to a more favorable range for plant growth.\n\nAfter correcting the pH, you can focus on the nutrient deficiencies. The potassium level of 35 is adequate, so you can monitor for other deficiencies. If there's a specific nutrient deficiency, such as nitrogen, you can apply muriate of potash at 50-80 kg/ha. This will help in addressing any deficiencies in potassium, but keep an eye on soil pH as it affects nutrient availability.",
+      "score": 0.5,
+      "notes": [
+        "missed 'cassava'"
+      ],
+      "latency_s": 60.62,
+      "tokens_est": 219
+    },
+    {
+      "id": "reason-02",
+      "lang": "en",
+      "category": "reasoning",
+      "prompt": "Loamy soil pH 6.5 N 45 P 30 K 150. Pick the best 2 high-value cash crops.",
+      "answer": "For loamy soil with a pH of 6.5, nitrogen levels (N) at 45 and potassium (K) at 150 are moderate, while phosphorus (P) at 30 is adequate. Given these soil conditions, the best 2 high-value cash crops would be:\n\n1. **Tomato**: This is a heavy feeder that can benefit from the moderate nitrogen levels. It also requires good drainage, which loamy soil typically provides.\n\n2. **Groundnut (Peanuts)**: Groundnuts are legumes that can help replenish soil nitrogen levels, which is beneficial for the subsequent crop rotation. They also have a good tolerance to the moderate potassium levels and are a high-value cash crop.\n\nThese crops are chosen based on their compatibility with the soil characteristics and the need for a balanced nutrient cycle in the rotation.",
+      "score": 0.5,
+      "notes": [
+        "missed 'pepper'"
+      ],
+      "latency_s": 43.77,
+      "tokens_est": 162
+    },
+    {
+      "id": "reason-03",
+      "lang": "en",
+      "category": "reasoning",
+      "prompt": "Clay soil pH 6.0 N 50 P 35 K 110. Is rice a good fit and why?",
+      "answer": "For rice cultivation on clay soil with a pH of 6.0, it's generally not the best fit. Rice prefers slightly acidic to neutral soil, ideally between pH 6.0 and 7.0. At a pH of 6.0, the soil is slightly acidic, which might be beneficial for rice growth. However, the high levels of nitrogen (N 50) and potassium (K 110) could be too high, potentially causing nutrient imbalances or even toxicity for rice. Rice is a heavy nitrogen user, but it doesn't require as much potassium as some other crops. \n\nTo improve the soil for rice, you could consider reducing the nitrogen and potassium levels. Adding lime (agricultural lime) to lower the pH slightly could also be beneficial. Additionally, incorporating organic matter like compost can help improve soil structure and fertility. Consulting with a soil testing lab for specific recommendations tailored to your soil conditions is recommended.",
+      "score": 0.0,
+      "notes": [
+        "missed 'yes'",
+        "missed 'moisture'"
+      ],
+      "latency_s": 49.5,
+      "tokens_est": 189
+    },
+    {
+      "id": "reason-04",
+      "lang": "en",
+      "category": "reasoning",
+      "prompt": "Farmer has only 3 weeks before rains stop. Recommend one fast-cycle crop.",
+      "answer": "Given the farmer has only 3 weeks before the rains stop, planting a fast-cycle crop like pigeon peas (also known as cowpeas) would be ideal. Pigeon peas can be sown directly into the prepared yam mounds. They typically mature in about 60-70 days, making them suitable for this short timeframe. Plant the pigeon peas one per mound after the first reliable rain, as recommended in context [1]. This crop will provide a quick harvest and add nutrients to the soil, ready for the next planting cycle.",
+      "score": 0.0,
+      "notes": [
+        "missed 'okra'"
+      ],
+      "latency_s": 32.84,
+      "tokens_est": 111
+    },
+    {
+      "id": "edge-01",
+      "lang": "en",
+      "category": "edge",
+      "prompt": "Can I plant maize in pure sand at pH 4.0 with zero fertiliser?",
+      "answer": "No, planting maize in pure sand at pH 4.0 without any fertiliser is not advisable. Pure sand lacks organic matter and nutrients, making it unsuitable for crop growth. Additionally, the low pH (acidic) would be detrimental to maize growth, as it needs a slightly to neutral pH range for optimal health. Before planting, you should amend the soil with agricultural lime to raise the pH and add organic matter to improve fertility. Consult your local agricultural extension for precise recommendations based on your area's specific conditions.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 31.86,
+      "tokens_est": 111
+    },
+    {
+      "id": "edge-02",
+      "lang": "en",
+      "category": "edge",
+      "prompt": "Is wood ash safe to apply unlimited amounts on acidic soil?",
+      "answer": "No, applying wood ash in unlimited amounts is not safe. Wood ash is alkaline and can raise soil pH too much, which is not beneficial for plants. For acidic soils, agricultural lime is a safer and more effective option. Apply wood ash sparingly as mentioned, or use muriate of potash for potassium deficiency. Always test soil pH first to avoid over-alkalization.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 27.3,
+      "tokens_est": 79
+    },
+    {
+      "id": "edge-03",
+      "lang": "en",
+      "category": "edge",
+      "prompt": "Should I irrigate at noon in hot dry season?",
+      "answer": "No, it's not advisable to irrigate at noon in a hot, dry season. Hot midday sun can cause water to evaporate quickly, leading to wasted water and inefficient irrigation. Instead, aim to irrigate early in the morning or late in the evening when temperatures are cooler and humidity is higher, reducing evaporation and maximizing water use efficiency.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 25.67,
+      "tokens_est": 74
+    },
+    {
+      "id": "edge-04",
+      "lang": "en",
+      "category": "edge",
+      "prompt": "Will applying 200 kg/ha urea to cowpea help yield?",
+      "answer": "Applying 200 kg/ha of urea to cowpea is not recommended as it could lead to nitrogen excess, which can burn the plants. For cowpea, applying urea at 50-100 kg/ha split-applied is more appropriate to avoid any damage. Nitrogen-fixing cover crops like cowpea or mucuna are better suited for this purpose, as they help in soil nitrogen replenishment without the risk of excess.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 31.81,
+      "tokens_est": 80
+    },
+    {
+      "id": "edge-05",
+      "lang": "en",
+      "category": "edge",
+      "prompt": "Can I rotate maize-maize-maize for 3 seasons?",
+      "answer": "No, I would not recommend rotating maize with itself for 3 seasons in succession. Crop rotation is crucial to maintain soil fertility and break pest cycles. Rotating maize with legumes like cowpea or groundnut will help restore nitrogen levels and reduce pest problems. Alternating maize with other crops like cassava, vegetables, or cowpea is a better approach.",
+      "score": 0.5,
+      "notes": [
+        "missed 'rotate'"
+      ],
+      "latency_s": 26.86,
+      "tokens_est": 74
+    },
+    {
+      "id": "edge-06",
+      "lang": "en",
+      "category": "edge",
+      "prompt": "Is it OK to plant yam without first preparing mounds in compacted clay?",
+      "answer": "Planting yam without mounds in compacted clay is not ideal. Yam mound preparation helps in improving soil aeration, drainage, and nutrient retention, which are crucial for yam growth. Without mounds, the yam may struggle to grow properly, leading to stunted plants and lower yields. It's best to prepare the soil as described, even in challenging conditions, to ensure optimal growth.",
+      "score": 1.0,
+      "notes": [],
+      "latency_s": 26.69,
+      "tokens_est": 78
+    }
+  ]
+}

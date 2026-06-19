@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+backend/db/agra.sqlite
+backend/db/agra.sqlite-shm
+backend/db/agra.sqlite-wal
+backend/models/*.gguf
+backend/models/*.part
+.env

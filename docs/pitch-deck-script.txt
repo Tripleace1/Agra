@@ -1,0 +1,269 @@
+================================================================================
+ AGRA — ADTC 2026 PITCH DECK SCRIPT  (spoken words, time-stamped)
+ Total target: 7:00.  Speaking rate: ~150 wpm.  Read out loud twice before stage.
+ Stage directions in [brackets].  Numbers in BOLD CAPS for emphasis.
+================================================================================
+
+
+--------------------------------------------------------------------------------
+SLIDE 1 — TITLE                                              0:00 – 0:15  (15s)
+--------------------------------------------------------------------------------
+
+[Walk to centre.  Breathe.  Hold the title slide for two seconds before speaking.]
+
+  "Good afternoon.  I'm <your name>, and this is AGRA.
+
+   A 100% offline LLM portal that gives African smallholder farmers
+   premium agricultural intelligence — on the same budget laptop they
+   already own.
+
+   Agriculture track."
+
+[Click to slide 2.]
+
+
+--------------------------------------------------------------------------------
+SLIDE 2 — THE PROBLEM                                        0:15 – 1:00  (45s)
+--------------------------------------------------------------------------------
+
+  "There are THIRTY-THREE MILLION smallholder farms across Sub-Saharan
+   Africa.
+
+   Sixty-eight percent of the land they sit on has no stable mobile data.
+
+   The laptop the average extension worker actually carries has FOUR
+   gigabytes of RAM — not eight, not sixteen.
+
+   And the farmer pays ZERO dollars for advisory software, because that is
+   the only price that works.
+
+   Today's agricultural AI assumes a cloud API call.  That single
+   assumption excludes the people who need it most.
+
+   We built Agra to remove the assumption."
+
+[Pause one beat.  Click.]
+
+
+--------------------------------------------------------------------------------
+SLIDE 3 — THE PERSONAS                                       1:00 – 1:45  (45s)
+--------------------------------------------------------------------------------
+
+  "We designed against three real people, not one.
+
+   JUMA — an extension worker in Tanzania.  Drives eighty kilometres
+   between farms.  He needs to interpret a soil test the moment the
+   farmer hands it to him.
+
+   AMINA — a farmer in Oyo State, Nigeria.  She speaks Yorùbá.  She wants
+   to ask, in her own language, why her pepper leaves are curling.
+
+   And MOUSSA — a cooperative manager in Côte d'Ivoire.  His buyers now
+   demand batch-level traceability for every bag of cassava.  Pen and
+   paper no longer pass audit.
+
+   Three users.  Three problems.  One offline portal."
+
+[Click.]
+
+
+--------------------------------------------------------------------------------
+SLIDE 4 — WHAT AGRA DOES                                     1:45 – 2:30  (45s)
+--------------------------------------------------------------------------------
+
+  "Agra ships three offline capabilities in a single portal.
+
+   First — SOIL DIAGNOSIS.  You enter the NPK and pH values from a soil
+   test.  Agra cross-references twelve crop tolerance profiles and gives
+   you a ranked match plus specific nutrient corrections.
+
+   Second — a RAG CHAT ASSISTANT.  Ask anything about pests, irrigation,
+   crop rotation.  In English or in Yorùbá.
+
+   Third — a TRACEABILITY LEDGER.  Register a harvest batch.  Get a
+   deterministic local trace ID, hashed from farmer, location, crop and
+   date.
+
+   These are not three apps stitched together.  They share a single
+   SQLite database.  The soil result feeds the chat.  The chat can
+   explain a registered batch's crop.  One integrated system."
+
+[Click.]
+
+
+--------------------------------------------------------------------------------
+SLIDE 5 — LIVE DEMO                                          2:30 – 3:30  (60s)
+--------------------------------------------------------------------------------
+
+[Play the 60–90-second slice of the Gate 1 demo video.  Do NOT narrate over the
+ demo audio.  Just stand still, breathe, and let it run.  When it ends, say:]
+
+  "Everything you just saw — soil diagnosis, the Yorùbá toggle, streamed
+   chat with source tags, batch registration with a unique trace ID —
+   all happened on a refurbished i5 laptop with the WiFi physically off.
+   No cloud.  No fallback.  No tricks."
+
+[Pause one full beat.  Click.]
+
+
+--------------------------------------------------------------------------------
+SLIDE 6 — ARCHITECTURE                                       3:30 – 4:15  (45s)
+--------------------------------------------------------------------------------
+
+  "Under the hood, Agra is intentionally boring.
+
+   A Flask server that binds only to one-two-seven-dot-zero-dot-zero-dot-one.
+   No outbound socket exists.
+
+   It talks to two stores — a SQLite file with full-text search five
+   indexing the agronomy corpus, and Qwen-two-point-five three-billion,
+   quantised to Q4_K_M, running through llama.cpp — exactly the runtime
+   ADTC specifies.
+
+   The browser is plain HTML, CSS and vanilla JavaScript.  No React, no
+   embedding model, no JavaScript framework.
+
+   Every megabyte matters when the RAM ceiling is seven."
+
+[Click.]
+
+
+--------------------------------------------------------------------------------
+SLIDE 7 — CROSS-DISCIPLINARY INTEGRATION                     4:15 – 5:00  (45s)
+--------------------------------------------------------------------------------
+
+  "The ADTC brief asks for at least ONE meaningful cross-disciplinary
+   integration.
+
+   Agra has THREE.
+
+   Agronomy — deterministic NPK and pH scoring against a crop tolerance
+   table.  Provably correct.  No hallucination.
+
+   Natural-language reasoning — RAG-grounded LLM chat in two languages,
+   with source tags so you can audit every answer.
+
+   And supply-chain — hashed batch IDs, country-code routing, full-text
+   searchable ledger.
+
+   And these three live inside ONE SQLite file.  That is the integration."
+
+[Click.]
+
+
+--------------------------------------------------------------------------------
+SLIDE 8 — AFRICAN ALPHA                                      5:00 – 5:30  (30s)
+--------------------------------------------------------------------------------
+
+  "Yorùbá in Agra is not Google-Translate plumbing.
+
+   The Yorùbá advisory corpus is a separate, hand-curated set of
+   documents.  The RAG retrieves directly from Yorùbá sources.  The
+   model answers in Yorùbá.  The UI translates from the same
+   localisation file.
+
+   That qualifies Agra for the African Alpha bonus — fifteen percent
+   on the panel score."
+
+[Click.]
+
+
+--------------------------------------------------------------------------------
+SLIDE 9 — BENCHMARKS                                         5:30 – 6:30  (60s)
+--------------------------------------------------------------------------------
+
+[Let the table appear.  Wait two seconds for judges to read.]
+
+  "By the numbers.
+
+   Peak RAM — three-point-eight gigabytes.  That is fifty-four percent
+   of the seven-gigabyte ceiling.  We are LEAVING three gigabytes of
+   headroom on purpose.  That converts to NINE of the twenty efficiency
+   points BEFORE the contest measures tokens-per-second.
+
+   Eight-point-four tokens per second on the reference i5.
+
+   First-token latency — two-point-one seconds.
+
+   English accuracy on our fifty-item eval — seventy-seven percent.
+   Yorùbá — fifty-eight, which is honest, passable, and improving.
+
+   Sustained CPU temperature — seventy-one degrees.  Thermal penalty:
+   zero.
+
+   Bonuses claimed: African Alpha, plus ten percent Budget Profile for
+   the refurbished i5 tier.  Both documented in the report and the repo."
+
+[Pause.  Click.]
+
+
+--------------------------------------------------------------------------------
+SLIDE 10 — ROADMAP + ASK                                     6:30 – 7:00  (30s)
+--------------------------------------------------------------------------------
+
+  "Six months of ADTC residency turns this into reach.
+
+   Thirty days: Hausa and Swahili corpora.  Two extension-agency pilots
+   in Oyo and Kaduna.
+
+   Ninety days: vision support for cassava disease, plus USB-stick
+   distribution kits.
+
+   One-eighty days: the corpus and the eval harness become an open
+   community benchmark — an Agra Standard for portable agronomy AI.
+
+   Agra wins for ADTC because it is the only submission that proves
+   cross-disciplinary integration, AND African Alpha, AND budget profile,
+   AND clean numbers on the official scoring formula.
+
+   Pick Agra.  Thank you."
+
+[Hold the slide.  Step back.  Smile.  Wait for applause to start before walking off.]
+
+
+================================================================================
+ STAGE COACHING NOTES
+================================================================================
+
+  TIMING
+    -  Practice with a stopwatch.  If you run over 7:30, cut slide 5 video
+       to 45 seconds (the most compressible slot).
+    -  Slow down on the NUMBERS slide (9).  Judges are reading; let them.
+
+  VOICE
+    -  Drop pitch on the slide title — sounds confident.
+    -  Speed up the persona names (Juma / Amina / Moussa) but slow on the
+       quotes.
+    -  Pause one full second after every "Third" or "And third" so the
+       count lands.
+
+  BODY
+    -  Hands open until slide 6, where you turn quarter-towards the screen
+       and gesture at the architecture diagram.
+    -  Walk one step left between slides 3 and 4 to break visual monotony.
+    -  Do NOT pace.  One step, then stop.
+
+  Q & A PREP — most likely questions
+    1. "Why Qwen, not Phi-3 or Gemma?"
+         Multilingual perf on Yorùbá.  Q4_K_M GGUF available.  Apache 2.0.
+    2. "How do you handle hallucination on dosage recommendations?"
+         Soil engine is deterministic, not LLM.  LLM only paraphrases.
+    3. "What stops the user from going online once installed?"
+         Nothing — but our scoring claims and verification harness assume
+         offline.  We provide a ufw rule that enforces it at the kernel.
+    4. "Is the Yorùbá fluent?"
+         Honest answer: passable, not native.  We compensate with
+         template strings for high-stakes UI text.
+    5. "What's the unit economics if you commercialise?"
+         Zero per-call cost.  Distribution is the only cost.  USB-stick
+         kits at <$2 per farmer, recouped via cooperative subscription.
+
+  IF THE PROJECTOR FAILS
+    -  Slides 1, 4, 7, 9 printed in your folder.  Walk and hold them up.
+       Do not skip slide 9 (numbers) under any circumstances.
+
+  IF THE LIVE DEMO LAPTOP FAILS
+    -  Switch immediately to the embedded video on slide 5.  Do not try
+       to recover the laptop on stage; you will lose 90 seconds.
+
+================================================================================
