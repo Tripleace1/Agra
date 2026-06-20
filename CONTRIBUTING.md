@@ -4,7 +4,7 @@ Thank you for considering a contribution. Agra is built for the **Africa Deep Te
 
 ## Ground rules
 
-1. **Stay offline.** No code path may call an external network during runtime. PRs that add cloud APIs, telemetry, or CDN-loaded assets will be closed.
+1. **Stay offline.** We know that code path may call an external network during runtime. PRs that add cloud APIs, telemetry, or CDN-loaded assets will be closed.
 2. **Stay within the RAM budget.** Peak resident set must remain comfortably under 7 GB on the ADTC reference laptop. Benchmark before and after with `scripts/eval/run_eval.py` and include the deltas in the PR description.
 3. **Stay in llama.cpp.** GGUF + `llama-cpp-python` is the only inference path. PRs that swap in a different runtime will not be merged for this contest cycle.
 4. **Add tests or eval items, not assumptions.** If you change the soil engine or the RAG retrieval, extend `scripts/eval/golden.json` with at least one item that proves the change.
@@ -71,10 +71,6 @@ Open a GitHub issue with:
 3. **Steps to reproduce** — exact form values or chat prompt.
 4. **What you expected** vs. **what happened**.
 5. Output of `curl -s http://127.0.0.1:5000/api/health`.
-
-## Code of conduct
-
-Be kind. Most reviewers are smallholder-farming domain experts, not professional engineers — assume good faith and explain technical jargon when you use it.
 
 ## License
 
